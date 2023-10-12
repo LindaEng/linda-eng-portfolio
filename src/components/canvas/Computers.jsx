@@ -5,8 +5,10 @@ import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 
 import CanvasLoader from '../Loader';
 
-const Computers = () => {
-  const computer = useGLTF('./terranium/scene.gltf');
+const Computers = ({ isMobile }) => {
+  const computer = useGLTF('./retro_computer/scene.gltf');
+
+
 
   return (
     <mesh>
@@ -22,7 +24,7 @@ const Computers = () => {
       />
       <primitive 
         object={computer.scene}
-        scale={2}
+        scale={isMobile ? 6 : 7.5}
         position={[-1, -3.20, -2.5]}
       />
     </mesh>
@@ -30,6 +32,26 @@ const Computers = () => {
 };
 
 const ComputersCanvas = () => {
+  const [isMobile, setIsMobile] = useState(false)
+  
+  
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 500px)')
+  
+    setIsMobile(mediaQuery.matches)
+  
+    const handleMediaQueryChange = (event) => {
+      setIsMobile(event.matches)
+    }
+  
+    mediaQuery.addEventListener('change', handleMediaQueryChange)
+  
+    return () => {
+      mediaQuery.removeEventListener('change', handleMediaQueryChange)
+    }
+  
+  }, [])
+
   return (
     <>
     <Canvas
@@ -44,7 +66,7 @@ const ComputersCanvas = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Computers />
+        <Computers isMobile={isMobile}/>
       </Suspense>
       <Preload all />
     </Canvas>
