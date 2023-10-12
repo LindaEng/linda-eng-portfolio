@@ -1,11 +1,12 @@
 import { Suspense, useEffect, useState } from 'react';
+import { MeshStandardMaterial } from 'three';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 
 import CanvasLoader from '../Loader';
 
 const Computers = () => {
-  const computer = useGLTF('./retro_computer/scene.gltf');
+  const computer = useGLTF('./terranium/scene.gltf');
 
   return (
     <mesh>
@@ -21,8 +22,8 @@ const Computers = () => {
       />
       <primitive 
         object={computer.scene}
-        scale={9}
-        position={[-1, -4.00, -2.5]}
+        scale={2}
+        position={[-1, -3.20, -2.5]}
       />
     </mesh>
   );
@@ -34,7 +35,7 @@ const ComputersCanvas = () => {
     <Canvas
       frameloop="demand"
       shadows
-      camera={{ position: [10, 3, 18], fov: 25 }}
+      camera={{ position: [10, 3, 19], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense>
