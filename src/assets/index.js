@@ -30,12 +30,14 @@ import nycDOE from "./company/nycDOE.png";
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import elixirCRUD from "./discuss_app.png"
 
 export {
   logo,
   backend,
   creator,
   elixir,
+  elixirCRUD,
   mobile,
   web,
   github,

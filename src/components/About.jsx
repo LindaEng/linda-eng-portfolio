@@ -50,7 +50,7 @@ const About = () => {
         Hello world! I am a skilled software engineer with experience in the EdTech space. I bring a track record of delivering efficient, scalable, and user-centric solutions. Specializing in JavaScript and Elixir, I have a deep understanding of modern frameworks like React and Node.js, which allows me to build software that not only meets but exceeds industry standards. 
       </motion.p>
 
-      <div className="mt-20 flex flex-wrap gap-10">
+      <div className="mt-20 flex flex-wrap gap-10 justify-center">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service}/>
         ))}

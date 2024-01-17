@@ -24,6 +24,7 @@ import {
     jobit,
     tripguide,
     threejs,
+    elixirCRUD
   } from "../assets";
   
   export const navLinks = [
@@ -215,25 +216,25 @@ import {
       source_code_link: "https://github.com/",
     },
     {
-      name: "Job IT",
+      name: "Elixir CRUD",
       description:
-        "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+        "Elixir CRUD is a robust and efficient web application built with Phoenix live view for the frontend and Elixir for the backend. Leveraging the power of Elixir and Phoenix Framework, it ensures high performance and fault tolerance, making it ideal for applications that require real-time updates and concurrent processing.",
       tags: [
         {
-          name: "react",
+          name: "Elixir",
           color: "blue-text-gradient",
         },
         {
-          name: "restapi",
+          name: "Phoenix",
           color: "green-text-gradient",
         },
         {
-          name: "scss",
+          name: "PostgreSQL",
           color: "pink-text-gradient",
         },
       ],
-      image: jobit,
-      source_code_link: "https://github.com/",
+      image: elixirCRUD,
+      source_code_link: "https://github.com/LindaEng/elixir_discuss_app",
     },
     {
       name: "Trip Guide",

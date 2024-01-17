@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,jsx}"],
   mode: "jit",
@@ -22,6 +21,9 @@ module.exports = {
         "hero-pattern": "url('/src/assets/herobg.png')",
       },
     },
+  },
+  variants: {
+    extend: {},
   },
   plugins: [],
 };
