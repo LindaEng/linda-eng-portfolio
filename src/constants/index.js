@@ -24,7 +24,9 @@ import {
     jobit,
     tripguide,
     threejs,
-    elixirCRUD
+    elixirCRUD,
+    steven,
+    raz
   } from "../assets";
   
   export const navLinks = [
@@ -173,7 +175,7 @@ import {
       name: "Razvan Espiritu",
       designation: "Senior Engineer Manager",
       company: "Multiverse",
-      image: "src/assets/Raz.jpg",
+      image: raz,
     },
     {
       testimonial:
@@ -181,7 +183,7 @@ import {
       name: "Steven Eng",
       designation: "Software Engineer",
       company: "JP Morgan Chase",
-      image: "src/assets/steven.jpg",
+      image: steven,
     },
     {
       testimonial:
