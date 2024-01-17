@@ -8,6 +8,9 @@ import { EarthCanvas } from './canvas'
 import { SectionWrapper } from '../hoc'
 import { slideIn } from '../utils/motion'
 
+
+
+
 const Contact = () => {
   const formRef = useRef()
   const [form, setForm] = useState({
@@ -17,8 +20,42 @@ const Contact = () => {
   })
 
   const [loading, setLoading] = useState(false)
-  const handleSubmit = () => {}
-  const handleChange = () => {}
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setForm({...form, [name]: value})
+  }
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    emailjs.send(
+                import.meta.env.VITE_EMAILJS_SERVICE,
+                import.meta.env.VITE_EMAILJS_TEMPLATE,{
+                    from_name: form.name,
+                    to_name: "Linda",
+                    from_email: form.email,
+                    to_email: "90lineng@gmail.com",
+                    message: form.message
+                },
+                import.meta.env.VITE_EMAILJS_KEY)
+                .then(() => {
+                  setLoading(false)
+                  alert("I'll get back to you soon!")
+
+                  setForm({
+                    name: '',
+                    email: '',
+                    message: ''
+                  })  
+                }, (error) => { 
+                  setLoading(false)
+                  alert(error.text)
+                })
+                
+  }
+
+
+  //template_0dg92sc
+  //service_db5wqnn
+  //3w8MV5G5r3_pEEro3
 
   return (
     <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden"
