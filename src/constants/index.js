@@ -168,26 +168,26 @@ import {
   const testimonials = [
     {
       testimonial:
-        "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-      name: "Sara Lee",
-      designation: "CFO",
-      company: "Acme Co",
-      image: "https://randomuser.me/api/portraits/women/4.jpg",
+        "An incredibly talented and gifted developer. Linda is a pleasure to work with and a true professional.",
+      name: "Razvan Espiritu",
+      designation: "Senior Engineer Manager",
+      company: "Multiverse",
+      image: "src/assets/Raz.jpg",
     },
     {
       testimonial:
-        "I've never met a web developer who truly cares about their clients' success like Rick does.",
-      name: "Chris Brown",
-      designation: "COO",
-      company: "DEF Corp",
-      image: "https://randomuser.me/api/portraits/men/5.jpg",
+        "Linda is a skilled software engineer. Has aptitude for learning new technologies and is a great team player.",
+      name: "Steven Eng",
+      designation: "Software Engineer",
+      company: "JP Morgan Chase",
+      image: "src/assets/steven.jpg",
     },
     {
       testimonial:
-        "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-      name: "Lisa Wang",
-      designation: "CTO",
-      company: "456 Enterprises",
+        "Linda is a great developer. She is always willing to help and is a great asset to the team.",
+      name: "Loretta Chung",
+      designation: "CEO",
+      company: "DB Takeover",
       image: "https://randomuser.me/api/portraits/women/6.jpg",
     },
   ];
