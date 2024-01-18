@@ -31,8 +31,8 @@ import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 import elixirCRUD from "./discuss_app.png"
-import steven from "./steven.png";
-import raz from "./raz.png";
+import steven from "./steven.jpg";
+import raz from "./Raz.jpg";
 
 export {
   logo,
