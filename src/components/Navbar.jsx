@@ -35,7 +35,7 @@ const Navbar = () => {
                   font-medium cursor-pointer`}
                   onClick={() => setActive(link.title)}
                 >
-                  <a href={(link.id === "resume") ? "src/assets/resume.pdf":`#${link.id}`} download={(link.id === "resume") ? "resume.pdf": undefined}>{link.title}</a>
+                  <a href={link.url} target={(link.id === "linkedIn") ? "_blank" : undefined} rel="noopener noreferrer" download={(link.id === "resume") ? "resume.pdf": undefined}>{link.title}</a>
                 </li>
               ))}
             </ul>

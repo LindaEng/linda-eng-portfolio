@@ -31,24 +31,34 @@ import {
   
   export const navLinks = [
     {
+      id: "resume",
+      title: "Resume",
+      url: "src/assets/resume.pdf"
+    },
+    {
+      id: "linkedIn",
+      title: "LinkedIn",
+      url: "https://www.linkedin.com/in/linda-eng/"
+    },
+    {
       id: "about",
       title: "About",
+      url: "#about",
     },
     {
       id: "work",
       title: "Work",
+      url: "#work",
     },
     {
       id: "projects",
       title: "Projects",
+      url: "#projects",
     },
     {
       id: "contact",
       title: "Contact",
-    },
-    {
-      id: "resume",
-      title: "Resume"
+      url: "#contact",
     }
   ];
   
