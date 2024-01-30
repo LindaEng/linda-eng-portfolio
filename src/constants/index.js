@@ -16,17 +16,16 @@ import {
     git,
     figma,
     docker,
-    meta,
     multiverse,
     nycDOE,
     dykebeer,
-    carrent,
-    jobit,
-    tripguide,
     threejs,
     elixirCRUD,
     steven,
-    raz
+    raz,
+    loretta,
+    synth,
+    s3
   } from "../assets";
   
   export const navLinks = [
@@ -148,8 +147,8 @@ import {
       iconBg: "#383E56",
       date: "May 2021 - Present",
       points: [
-        "Engineered and maintained the Learning Management Platform, ensuring seamless performance and usability for a user base exceeding 10,000 individuals.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+        "Refined the learning management platform with functional programming in Elixir, achieving a 40% scalability boost and cutting latency by 50%, significantly improving user engagement and satisfaction.",
+        "Built React and RESTful APIs aimed at streamlining content access and improving navigational ease, ensuring seamless performance and usability for a user base exceeding 10,000 individuals.",
         "Led the successful migration of data from diverse platforms to establish a unified single source of truth, streamlining data access and enhancing data accuracy and consistency across the organization.",
         "Participating in code reviews and providing constructive feedback to other developers.",
       ],
@@ -176,6 +175,7 @@ import {
       points: [
         "Fostered a passion for computer science by inspiring and mentoring students through engaging lessons, hands-on projects, and real-world applications.",
         "Designed, updated, and expanded the computer science curriculum to align with industry trends and educational standards, ensuring students received a comprehensive and relevant education.",
+        "•Solid understanding of data structures, algorithms, and programming languages, gained through teaching and practical application.",
         "Cultivated students' analytical thinking and problem-solving abilities by challenging them with complex coding projects, algorithms, and logical exercises.",
         "Guided students to excel in computer science competitions and exams, resulting in high scores, awards, and recognition at local and regional levels, showcasing the program's excellence."
       ],
@@ -205,18 +205,18 @@ import {
       name: "Loretta Chung",
       designation: "CEO",
       company: "DB Takeover",
-      image: "https://randomuser.me/api/portraits/women/6.jpg",
+      image: loretta,
     },
   ];
   
   const projects = [
     {
-      name: "Car Rent",
+      name: "Direct-Upload",
       description:
-        "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+        "Direct-Upload is a full-stack web application that allows users to upload multimedia to an AWS S3 bucket. It is built with React, Node, Express, and AWS S3.",
       tags: [
         {
-          name: "react",
+          name: "AWS S3",
           color: "blue-text-gradient",
         },
         {
@@ -224,12 +224,12 @@ import {
           color: "green-text-gradient",
         },
         {
-          name: "tailwind",
+          name: "React",
           color: "pink-text-gradient",
         },
       ],
-      image: carrent,
-      source_code_link: "https://github.com/",
+      image: s3,
+      source_code_link: "https://github.com/LindaEng/upload-direct",
     },
     {
       name: "Elixir CRUD",
@@ -253,25 +253,24 @@ import {
       source_code_link: "https://github.com/LindaEng/elixir_discuss_app",
     },
     {
-      name: "Trip Guide",
-      description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      name: "Synth",
+      description: "A synthesizer built with Tone.js and React. Designed with Material UI.",
       tags: [
         {
-          name: "nextjs",
+          name: "Tone.js",
           color: "blue-text-gradient",
         },
         {
-          name: "supabase",
+          name: "Material UI",
           color: "green-text-gradient",
         },
         {
-          name: "css",
+          name: "React",
           color: "pink-text-gradient",
         },
       ],
-      image: tripguide,
-      source_code_link: "https://github.com/",
+      image: synth,
+      source_code_link: "https://github.com/LindaEng/Skyboxx",
     },
   ];
   

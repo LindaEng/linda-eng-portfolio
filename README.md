@@ -1,8 +1,31 @@
-# React + Vite
+# Portfolio Site
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my personal portfolio site, showcasing my skills, experiences, and projects.
 
-Currently, two official plugins are available:
+## Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+- Vite
+- react-three/fiber
+- react-three/drei
+- framer-motion
+- react-spring
+- react-tilt
+- react-router-dom
+- react-vertical-timeline-component
+- EmailJS
+
+
+## Running Locally
+
+To run this site locally, follow these steps:
+
+1. Clone the repository: `git clone https://github.com/your-github-username/portfolio-site.git`
+2. Install dependencies: `npm install`
+3. Start the development server: `npm run dev`
+
+The site will also be available at: `https://linda-eng-portfolio.onrender.com`.
+
+## Contact
+
+If you have any questions or comments, feel free to reach out to me on [LinkedIn](https://www.linkedin.com/in/linda-eng/).

@@ -22,17 +22,17 @@ import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 
-import meta from "./company/meta.png";
 import dykebeer from "./company/dykebeer.png";
 import multiverse from "./company/multiverse.svg";
 import nycDOE from "./company/nycDOE.png";
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+
 import elixirCRUD from "./discuss_app.png"
 import steven from "./steven.jpg";
 import raz from "./Raz.jpg";
+import loretta from "./loretta.jpg";
+import synth from "./synth.png";
+import s3 from "./aws-s3.png";
 
 export {
   logo,
@@ -58,13 +58,12 @@ export {
   tailwind,
   typescript,
   threejs,
-  meta,
   dykebeer,
   multiverse,
   nycDOE,
-  carrent,
-  jobit,
-  tripguide,
   steven, 
-  raz
+  raz,
+  loretta,
+  synth,
+  s3
 };
