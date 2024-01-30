@@ -24,7 +24,7 @@ To run this site locally, follow these steps:
 2. Install dependencies: `npm install`
 3. Start the development server: `npm run dev`
 
-The site will also be available at: `https://linda-eng-portfolio.onrender.com`.
+The site will also be available at: [Link To Live Site](https://linda-eng-portfolio.onrender.com).
 
 ## Contact
 
