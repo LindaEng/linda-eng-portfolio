@@ -35,7 +35,7 @@ export const navLinks = [
   {
     id: "resume",
     title: "Resume",
-    url: "src/assets/Linda_Eng2025.pdf"
+    url: "/Linda_Eng2025.pdf"
   },
   {
     id: "linkedIn",

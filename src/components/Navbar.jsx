@@ -64,7 +64,7 @@ const Navbar = () => {
                         setActive(link.title)
                       }}
                     >
-                      <a href={(link.id === "resume") ? `src/assets/resume.pdf`:`#${link.id}`} download={(link.id === "resume") ? "resume.pdf" : undefined}>{link.title}</a>
+                      <a href={(link.id === "resume") ? `Linda_Eng2025.pdf`:`#${link.id}`} download={(link.id === "resume") ? "Linda_Eng2025.pdf" : undefined}>{link.title}</a>
                     </li>
                   ))}
                 </ul>
