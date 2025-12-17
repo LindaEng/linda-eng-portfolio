@@ -47,7 +47,8 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        Hello world! I am a skilled software engineer with experience in the EdTech space. I bring a track record of delivering efficient, scalable, and user-centric solutions. Specializing in JavaScript and Elixir, I have a deep understanding of modern frameworks like React and Node.js, which allows me to build software that not only meets but exceeds industry standards. 
+        Hello world! I’m an AI-focused software engineer building intelligent, user-centered products.
+My work combines modern web systems with applied machine learning in production environments.
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10 justify-center">
