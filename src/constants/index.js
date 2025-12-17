@@ -100,7 +100,7 @@ const experiences = [
     points: [
       "Built responsive, modular components in React and TypeScript from Figma designs, improving maintainability and load times across user and admin dashboards",
       "Implemented secure login and token-based authentication using OAuth and bcrypt, strengthening protection against token leakage and brute-force attacks",
-      "Designed and optimized RESTful APIs with Express.js and Postgres, adding input validation, access control, and error sanitization to minimize security risks",
+      "Designed and optimized RESTful APIs with Express.js and Postgres, adding input validation, access control, and error sanitization to minimize security risks.",
       "Collaborated with stakeholders to define MVP features and delivered a production-ready portal for 500+ users on a tight volunteer timeline"
     ],
   },
