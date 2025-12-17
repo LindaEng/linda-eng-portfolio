@@ -179,7 +179,7 @@ const testimonials = [
       "Linda is a great developer. She is always willing to help and is a great asset to the team.",
     name: "Loretta Chung",
     designation: "CEO",
-    company: "DB Takeover",
+    company: "DBTO",
     image: loretta,
   },
 ];
