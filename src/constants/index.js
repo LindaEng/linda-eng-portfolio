@@ -1,5 +1,6 @@
 import {
     mobile,
+    njpc,
     backend,
     creator,
     web,
@@ -32,7 +33,7 @@ import {
     {
       id: "resume",
       title: "Resume",
-      url: "src/assets/resume.pdf"
+      url: "src/assets/Linda_Eng2025.pdf"
     },
     {
       id: "linkedIn",
@@ -141,29 +142,55 @@ import {
   
   const experiences = [
     {
-      title: "Elixir Developer / Software Engineering Coaching",
-      company_name: "Multiverse",
-      icon: multiverse,
+      title: "Software Engineer",
+      company_name: "New Jersey Parent Caucus – Legal Service Non-Profit",
+      icon: njpc,
       iconBg: "#383E56",
-      date: "May 2021 - Present",
+      date: "May 2024 – Present",
       points: [
-        "Refined the learning management platform with functional programming in Elixir, achieving a 40% scalability boost and cutting latency by 50%, significantly improving user engagement and satisfaction.",
-        "Built React and RESTful APIs aimed at streamlining content access and improving navigational ease, ensuring seamless performance and usability for a user base exceeding 10,000 individuals.",
-        "Led the successful migration of data from diverse platforms to establish a unified single source of truth, streamlining data access and enhancing data accuracy and consistency across the organization.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "<strong>Built</strong> responsive, modular components in React and TypeScript from Figma designs, improving maintainability and load times across user and admin dashboards",
+        "<strong>Implemented</strong> secure login and token-based authentication using OAuth and bcrypt, strengthening protection against token leakage and brute-force attacks",
+        "<strong>Designed</strong> and optimized RESTful APIs with Express.js and Postgres, adding input validation, access control, and error sanitization to minimize security risks",
+        "<strong>Collaborated</strong> with stakeholders to define MVP features and delivered a production-ready portal for 500+ users on a tight volunteer timeline"
       ],
     },
     {
-      title: "Freelance Web Developer",
-      company_name: "DykeBeer",
+      title: "Software Engineer",
+      company_name: "Multiverse - AI EdTech Start Up",
+      icon: multiverse,
+      iconBg: "#383E56",
+      date: "May 2021 - August 2024",
+      points: [
+          "<strong>Delivered</strong> UI enhancements that improved responsiveness and usability across a high-traffic LMS serving thousands of learners",
+          "<strong>Developed</strong> GPT-powered personalization features via secure API architecture (RBAC, token management), increasing user engagement",
+          "<strong>Improved</strong> system reliability by refactoring REST endpoints with structured logging, rate limiting, and clearer error surfaces",
+          "<strong>Strengthened</strong> release quality by implementing CI/CD pipelines and automated testing coverage",
+          "<strong>Designed</strong> and deployed AWS microservices supporting scalable profile creation and distributed workflows",
+          "<strong>Mentored</strong> peers on system design, debugging, and secure coding, elevating team output"
+      ],
+    },
+    {
+      title: "Software Engineer",
+      company_name: "Nestor – Real Estate SaaS Startup",
+      icon: nestor, // replace with correct icon reference if different
+      iconBg: "#383E56",
+      date: "January 2017 — February 2019",
+      points: [
+        "<strong>Coordinated</strong> bi-weekly release cycles with design, QA, and product, ensuring features shipped on schedule with minimal defects",
+        "<strong>Modernized</strong> a legacy frontend codebase, reducing load times and improving maintainability for faster iteration",
+        "<strong>Migrated</strong> file handling to AWS S3 using presigned URLs, increasing upload reliability and strengthening data governance"
+      ],
+    },
+    {
+      title: "Lead Developer",
+      company_name: "DBTO - NYC Local Beer Distribution Company",
       icon: dykebeer,
       iconBg: "#383E56",
-      date: "Jan 2022 - Jan 2023",
+      date: "Jan 2022 - Present",
       points: [
-        "Led the complete design and development of Dyke Beer's website, from conceptualization to deployment, creating a visually appealing and user-friendly online presence.",
-        "Implemented robust e-commerce capabilities, including shopping cart, secure payment processing, and inventory management, driving online sales and enhancing customer experience.",
-        "Leveraged interactive elements and user-friendly navigation to improve user engagement, resulting in increased visitor retention and higher conversion rates",
-        "Ensured the website's scalability and performance by employing best practices in web development, resulting in a responsive and reliable platform capable of handling high traffic loads.",
+        "<strong>Built</strong> a lightweight full-stack web application that mapped product distribution across New York City, helping the team track inventory, visibility, and retailer demand",
+        "<strong>Designed</strong> and implemented a searchable storefront dashboard so customers and retailers could easily find nearby stockists, improving brand engagement and inbound interest",
+        "<strong>Integrated</strong> third-party APIs and geolocation tools to display real-time availability, reducing manual tracking effort for the business owner"
       ],
     },
     {
@@ -173,11 +200,9 @@ import {
       iconBg: "#E6DEDD",
       date: "September 2013 - January 2020",
       points: [
-        "Fostered a passion for computer science by inspiring and mentoring students through engaging lessons, hands-on projects, and real-world applications.",
-        "Designed, updated, and expanded the computer science curriculum to align with industry trends and educational standards, ensuring students received a comprehensive and relevant education.",
-        "•Solid understanding of data structures, algorithms, and programming languages, gained through teaching and practical application.",
-        "Cultivated students' analytical thinking and problem-solving abilities by challenging them with complex coding projects, algorithms, and logical exercises.",
-        "Guided students to excel in computer science competitions and exams, resulting in high scores, awards, and recognition at local and regional levels, showcasing the program's excellence."
+        "<strong>Designed</strong> and led a full-year computer science curriculum, managing projects across multiple classrooms and aligning instruction with College Board standards",
+        "<strong>Built</strong> strong relationships with students, parents, and administrators, translating complex technical concepts for diverse, non-technical audiences",
+        "<strong>Mentored</strong> underrepresented students in tech pathways, demonstrating calm leadership under pressure while preparing them for AP exams and enrichment programs"
       ],
     },
   ];
