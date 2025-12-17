@@ -7,6 +7,8 @@ import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
 
+import aws from "./tech/aws.png";
+import openAI from "./tech/openAI.png";
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
 import elixir from "./tech/elixir.png";
@@ -25,7 +27,7 @@ import threejs from "./tech/threejs.svg";
 import dykebeer from "./company/dykebeer.png";
 import multiverse from "./company/multiverse.svg";
 import nycDOE from "./company/nycDOE.png";
-
+import njpc from "./company/njpc.jpg";
 
 import elixirCRUD from "./discuss_app.png"
 import steven from "./steven.jpg";
@@ -41,6 +43,7 @@ export {
   elixir,
   elixirCRUD,
   mobile,
+  aws,
   web,
   github,
   menu,
@@ -48,6 +51,7 @@ export {
   css,
   docker,
   figma,
+  openAI,
   git,
   html,
   javascript,
@@ -61,6 +65,7 @@ export {
   dykebeer,
   multiverse,
   nycDOE,
+  njpc,
   steven, 
   raz,
   loretta,
