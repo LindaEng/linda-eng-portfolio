@@ -1,52 +1,136 @@
-import { motion } from 'framer-motion';
-import { styles } from '../styles';
-import { ComputersCanvas } from './canvas';
+import { COLORS, site, highlights, stats } from '../constants/portfolioData';
 
-import React from 'react';
+const dotGrid = {
+  backgroundImage: `radial-gradient(${COLORS.inkDivider} 1px, transparent 1px)`,
+  backgroundSize: '18px 18px',
+  backgroundPosition: '-9px -9px',
+};
 
-const Hero = () => {
+export default function Hero() {
   return (
-    <section className="relative w-full h-screen">
-      <div className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5`}>
-        <div className="flex flex-col justify-center items-center mt-5">
-          <div className="w-5 h-5 rounded-full bg-[#915eff]" />
-          <div className="w-1 sm:h-80 h-40 violet-gradient" />
-        </div>
+    <section className="r-hero-outer" style={{ position: 'relative', ...dotGrid }}>
+      <div
+        className="r-hero-card r-card-pad"
+        style={{
+          maxWidth: 1180,
+          margin: '0 auto',
+          position: 'relative',
+          background: COLORS.bg,
+          border: `1.5px solid ${COLORS.inkOutline}`,
+          borderRadius: 6,
+          boxShadow: `0 2px 0 ${COLORS.inkShadow}`,
+        }}
+      >
         <div>
-          <h1 className={`${styles.heroHeadText} text-white`}>Hi, I'm <span className="text-[#915eff]">Linda Eng</span></h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I'm a Software Engineer.<br className="sm:block hidden" /> Check out my portfolio below!
+          <div
+            style={{
+              fontSize: 13,
+              fontWeight: 700,
+              letterSpacing: '0.04em',
+              textTransform: 'uppercase',
+              color: COLORS.accent,
+              marginBottom: 18,
+            }}
+          >
+            {site.roleTagline}
+          </div>
+          <h1
+            style={{
+              fontSize: 'clamp(28px, 5vw, 46px)',
+              lineHeight: 1.15,
+              fontWeight: 800,
+              letterSpacing: '-0.02em',
+              margin: '0 0 24px',
+            }}
+          >
+            {site.name}
+          </h1>
+          <p
+            style={{
+              fontSize: 16,
+              lineHeight: 1.7,
+              maxWidth: 520,
+              color: COLORS.inkSoft,
+              margin: '0 0 28px',
+            }}
+          >
+            I build tools that help people learn. My focus is <strong>product thinking</strong>,{' '}
+            <strong>creative coding</strong>, and turning messy, dense information into something
+            people actually want to sit with.
           </p>
-        </div>
-      </div>
-      <ComputersCanvas />
-      <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
-        <a href="#about">
-          <div className="w-[35px] h-[70px] rounded-2xl border-4 border-secondary flex justify-center items-start p-2">
-            <motion.div
-              animate={{
-                y: [0, 24, 0]
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: "loop"
+          <div style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap' }}>
+            <a
+              href="#work"
+              style={{
+                fontSize: 14,
+                fontWeight: 700,
+                padding: '13px 26px',
+                borderRadius: 4,
+                background: COLORS.accent,
+                color: '#fff',
+                textDecoration: 'none',
               }}
             >
-            {/* Triangle 1 */}
-            <svg width="10" height="10" viewBox="0 0 10 10">
-              <polygon points="5,0 10,10 0,10" fill="#915eff" transform="rotate(180 5 5)" />
-            </svg>
-            {/* Triangle 2 */}
-            <svg width="10" height="10" viewBox="0 0 10 10">
-              <polygon points="5,0 10,10 0,10" fill="#915eff" transform="rotate(180 5 5)" />
-            </svg>
-            </motion.div>
+              View my work
+            </a>
+            <div style={{ fontSize: 13, color: COLORS.inkMuted }}>Open to full-time roles</div>
           </div>
-        </a>
+        </div>
+
+        <div
+          style={{
+            position: 'relative',
+            border: `1.5px dashed ${COLORS.inkDashed}`,
+            borderRadius: 4,
+            padding: '26px 24px',
+          }}
+        >
+          <div style={{ fontSize: 15, fontWeight: 700, marginBottom: 18 }}>
+            This profile includes
+          </div>
+          {highlights.map((h, i) => (
+            <div
+              key={i}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 12,
+                padding: '12px 0',
+                borderTop: `1px solid ${COLORS.inkDivider}`,
+              }}
+            >
+              <span style={{ fontSize: 15 }}>{h.icon}</span>
+              <span style={{ fontSize: 13.5, fontWeight: 500 }}>{h.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div
+        className="r-stats-bar"
+        style={{
+          maxWidth: 1180,
+          margin: '24px auto 0',
+          border: `1.5px solid ${COLORS.inkOutline}`,
+          borderRadius: 6,
+          background: COLORS.bg,
+        }}
+      >
+        {stats.map((s, i) => (
+          <div
+            key={i}
+            className="r-stat-cell"
+            style={{
+              borderLeft: i === 0 ? 'none' : `1.5px solid ${COLORS.inkDivider}`,
+            }}
+          >
+            <div style={{ fontSize: 12, fontWeight: 600, color: COLORS.inkLabel, marginBottom: 8 }}>
+              {s.label}
+            </div>
+            <div style={{ fontSize: 19, fontWeight: 700 }}>{s.value}</div>
+          </div>
+        ))}
       </div>
     </section>
   );
-};
-
-export default Hero;
+}

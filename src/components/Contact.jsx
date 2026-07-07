@@ -1,120 +1,76 @@
-import React from 'react'
-import { useState, useRef } from 'react'
-import { motion } from 'framer-motion'
-import emailjs from '@emailjs/browser'
+import { COLORS, site } from '../constants/portfolioData';
 
-import { styles } from '../styles'
-import { EarthCanvas } from './canvas'
-import { SectionWrapper } from '../hoc'
-import { slideIn } from '../utils/motion'
-
-
-
-
-const Contact = () => {
-  const formRef = useRef()
-  const [form, setForm] = useState({
-    name: '',
-    email: '',
-    message: ''
-  })
-
-  const [loading, setLoading] = useState(false)
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setForm({...form, [name]: value})
-  }
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    emailjs.send(
-                import.meta.env.VITE_EMAILJS_SERVICE,
-                import.meta.env.VITE_EMAILJS_TEMPLATE,{
-                    from_name: form.name,
-                    to_name: "Linda",
-                    from_email: form.email,
-                    to_email: "90lineng@gmail.com",
-                    message: form.message
-                },
-                import.meta.env.VITE_EMAILJS_KEY)
-                .then(() => {
-                  setLoading(false)
-                  alert("I'll get back to you soon!")
-
-                  setForm({
-                    name: '',
-                    email: '',
-                    message: ''
-                  })  
-                }, (error) => { 
-                  setLoading(false)
-                  alert(error.text)
-                })
-                
-  }
-
-
-  //template_0dg92sc
-  //service_db5wqnn
-  //3w8MV5G5r3_pEEro3
-
+export default function Contact() {
   return (
-    <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden"
-    >
-      <motion.div
-        variants={slideIn('left', "tween", 0.2, 1)}
-        className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
-      >
-        <p className={styles.sectionSubText}>
-          Get in touch
-        </p>
-        <h3 className={styles.sectionHeadText}>
-          Contact.
-        </h3>
-        <form
-          ref={formRef}
-          onSubmit={handleSubmit}
-          className="mt-12 flex flex-col gap-8"
+    <section id="contact" className="r-contact-section" style={{ background: COLORS.dark }}>
+      <div style={{ maxWidth: 1180, margin: '0 auto' }}>
+        <h2
+          style={{
+            fontSize: 'clamp(28px, 5vw, 40px)',
+            fontWeight: 800,
+            letterSpacing: '-0.02em',
+            color: COLORS.onDark,
+            margin: '0 0 24px',
+          }}
         >
-          <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Name</span> 
-            <input
-              type="text"
-              name="name"
-              value={form.name}
-              onChange={handleChange}
-              placeholder=""
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium"
-            ></input>
-            <span className="text-white font-medium mb-4 mt-4">Your Email</span> 
-            <input
-              type="text"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-              placeholder=""
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium"
-            ></input>
-            <span className="text-white font-medium mb-4 mt-4">Your Message</span> 
-            <textarea
-              rows="7"
-              type="text"
-              name="message"
-              value={form.message}
-              onChange={handleChange}
-              placeholder=""
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium"
-            ></textarea>
-          </label>  
-          <button
-            type="submit"
-            className="bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl"
+          Let's build something.
+        </h2>
+        <p
+          style={{
+            fontSize: 16,
+            lineHeight: 1.6,
+            color: COLORS.onDarkMuted,
+            maxWidth: 480,
+            margin: '0 0 36px',
+          }}
+        >
+          Open to full-time roles and interesting freelance projects. Reach out and I'll get back
+          to you within a day.
+        </p>
+        <div style={{ display: 'flex', gap: 16, alignItems: 'center', flexWrap: 'wrap' }}>
+          <a
+            href={`mailto:${site.email}`}
+            style={{
+              fontSize: 14,
+              fontWeight: 700,
+              padding: '13px 26px',
+              borderRadius: 4,
+              background: COLORS.accent,
+              color: '#fff',
+              textDecoration: 'none',
+            }}
           >
-            {loading ? "Sending..." : "Send"}
-          </button>  
-        </form>
-      </motion.div>
-    </div>
-  )
+            {site.email}
+          </a>
+          <a
+            href={site.github}
+            target="_blank"
+            rel="noreferrer"
+            style={{ fontSize: 13, fontWeight: 600, color: COLORS.onDarkSubtle, textDecoration: 'none' }}
+          >
+            GitHub
+          </a>
+          <a
+            href={site.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            style={{ fontSize: 13, fontWeight: 600, color: COLORS.onDarkSubtle, textDecoration: 'none' }}
+          >
+            LinkedIn
+          </a>
+        </div>
+        <div
+          style={{
+            marginTop: 56,
+            paddingTop: 24,
+            borderTop: `1.5px solid ${COLORS.onDarkBorder}`,
+            fontSize: 12,
+            color: COLORS.onDarkFaint,
+          }}
+        >
+          © 2026 Linda Eng. Built with care.
+        </div>
+      </div>
+    </section>
+  );
 }
-
-export default SectionWrapper(Contact, "contact")

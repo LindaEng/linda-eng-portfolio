@@ -1,30 +1,28 @@
-import { BrowserRouter } from 'react-router-dom'
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Work from './components/Work';
+import Blog from './components/Blog';
+import About from './components/About';
+import Contact from './components/Contact';
+import { site } from './constants/portfolioData';
 
-import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas } from './components'
-
-const App = () => {
-
+function App() {
   return (
-    <>
-      <BrowserRouter>
-       <div className="relative z-0 bg-primary">
-        <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-          <Navbar/>
-          <Hero/>
-        </div>
-        <About />
-        <Tech />
-        <Experience />     
-        <Works />
-        <Feedbacks />
-        <div className="relative z-0">
-          <Contact />
-          <StarsCanvas />
-        </div>
-      </div>
-      </BrowserRouter>
-    </>
-  )
+    <div
+      style={{
+        fontFamily: "'JetBrains Mono', ui-monospace, Menlo, monospace",
+        minHeight: '100vh',
+        width: '100%',
+      }}
+    >
+      <Navbar />
+      <Hero />
+      <Work />
+      {site.showBlog && <Blog />}
+      <About />
+      <Contact />
+    </div>
+  );
 }
 
-export default App
+export default App;

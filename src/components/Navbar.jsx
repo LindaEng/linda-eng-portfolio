@@ -1,78 +1,112 @@
-import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState } from 'react';
+import { COLORS, site } from '../constants/portfolioData';
 
-import { styles } from '../styles'
-import { navLinks } from '../constants'
-import { logo, menu, close } from '../assets'
+const links = [
+  { href: '#work', label: 'Work' },
+  ...(site.showBlog ? [{ href: '#blog', label: 'Blog' }] : []),
+  { href: '#about', label: 'About' },
+  { href: '#contact', label: 'Contact' },
+];
 
-const Navbar = () => {
-  const [active, setActive] = useState('') 
-  const [toggle, setToggle] = useState(false)
+export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
 
-      return (
-        <nav className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary`}>
-          <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
-            <Link
-              to="/"
-              className="flex items-center gap-2"
-              onClick={() => {
-                setActive("");
-                window.scrollTo(0,0);
+  return (
+    <nav
+      style={{
+        position: 'sticky',
+        top: 0,
+        zIndex: 20,
+        background: COLORS.bgSoft,
+        backdropFilter: 'blur(8px)',
+        borderBottom: `1.5px solid ${COLORS.inkBorder}`,
+      }}
+    >
+      <div className="r-nav">
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 10,
+            fontSize: 17,
+            fontWeight: 700,
+            letterSpacing: '-0.01em',
+          }}
+        >
+          <span
+            style={{
+              border: `1.5px solid ${COLORS.ink}`,
+              padding: '3px 9px',
+              borderRadius: 3,
+            }}
+          >
+            LE
+          </span>
+          <span>{site.handle}</span>
+        </div>
+
+        <div className="r-nav-links">
+          {links.map((l) => (
+            <a key={l.href} href={l.href} style={{ textDecoration: 'none', color: 'inherit' }}>
+              {l.label}
+            </a>
+          ))}
+        </div>
+
+        <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+          <a
+            href={site.resumeHref}
+            style={{
+              fontSize: 13,
+              fontWeight: 700,
+              padding: '9px 18px',
+              borderRadius: 4,
+              background: COLORS.accent,
+              color: '#fff',
+              textDecoration: 'none',
+            }}
+          >
+            Resume
+          </a>
+          <button
+            className="r-hamburger"
+            onClick={() => setMenuOpen((o) => !o)}
+            aria-label="Toggle menu"
+            style={{ color: COLORS.ink }}
+          >
+            {menuOpen ? '✕' : '☰'}
+          </button>
+        </div>
+      </div>
+
+      {menuOpen && (
+        <div
+          style={{
+            padding: '12px 20px 16px',
+            borderTop: `1px solid ${COLORS.inkBorder}`,
+            background: COLORS.bgSoft,
+          }}
+        >
+          {links.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              onClick={() => setMenuOpen(false)}
+              style={{
+                display: 'block',
+                padding: '11px 0',
+                fontSize: 14,
+                fontWeight: 600,
+                textDecoration: 'none',
+                color: 'inherit',
+                borderBottom: `1px solid ${COLORS.inkHairline}`,
               }}
             >
-              <img src={logo} alt="logo" className="w-9 h-9 object-contain"/>
-              <p className="text-white text-[18px] font-bold cursor-pointer flex">Linda &nbsp; <span className="sm:block hidden"> |  Software Engineer</span></p>
-            </Link>
-            <ul className="list-none hidden sm:flex flex-row gap-10">
-              {navLinks.map((link) => (
-                <li
-                  key={link.id}
-                  className={`${
-                    active === link.title
-                    ? "text-white"
-                    : "text-secondary"
-                  } hover:text-white text-[18px]
-                  font-medium cursor-pointer`}
-                  onClick={() => setActive(link.title)}
-                >
-                  <a href={link.url} target={(link.id === "linkedIn") ? "_blank" : undefined} rel="noopener noreferrer" download={(link.id === "resume") ? "Linda_Eng2025.pdf" : undefined}>{link.title}</a>
-                </li>
-              ))}
-            </ul>
-
-            <div className="sm:hidden flex flex-1 justify-end items-center">
-              <img
-                src={toggle ? close : menu}
-                alt="menu"
-                className="w-[28px] h-[28px] object-contain cursor-pointer"
-                onClick={() => setToggle(!toggle)}
-              />
-              <div className={`${!toggle ? 'hidden' : 'flex'} p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}>
-                <ul className="list-none flex justify-end items-start flex-col gap-4">
-                  {navLinks.map((link) => (
-                    <li
-                      key={link.id}
-                      className={`${
-                        active === link.title
-                        ? "text-white"
-                        : "text-secondary"
-                      } font-poppins font-medium
-                      cursor-pointer text-[16px]
-                      `}
-                      onClick={() => {
-                        setToggle(!toggle)
-                        setActive(link.title)
-                      }}
-                    >
-                      <a href={(link.id === "resume") ? `Linda_Eng2025.pdf`:`#${link.id}`} download={(link.id === "resume") ? "Linda_Eng2025.pdf" : undefined}>{link.title}</a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </nav>
-      )
+              {l.label}
+            </a>
+          ))}
+        </div>
+      )}
+    </nav>
+  );
 }
-
-export default Navbar
